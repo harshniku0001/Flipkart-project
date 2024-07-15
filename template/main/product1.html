@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niku Shopping List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% for product in products %}
+    <div style="border: 2px solid whitesmoke; border-radius: 10px; width: 98%; margin-left: 1%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; display: inline-block; padding: 10px;">
+        <div class="col-md-3">
+            <a href="{% url 'detail' product.id %}">
+                <img style="width: 200px" src="https://cdnc.lystit.com/photos/2012/11/02/polo-ralph-lauren-red-contrast-collar-block-striped-polo-shirt-product-1-5116947-979346267.jpeg" alt="Product Image">
+            </a>
+        </div>
+        <div class="col-md-6">
+            <h2 class="product-name">{{ product.name }}</h2>
+            <p class="product-review">
+                {% for _ in "123" %}
+                <i style="color: red;" class="fa-solid fa-star"></i>
+                {% endfor %}
+                <i style="color: red;" class="fa-solid fa-star"></i>
+                <i style="color: red;" class="fa-solid fa-star"></i>
+                <span style="color: grey;">3.4</span>
+            </p>
+            <br>
+            <span style="color: grey;">100% cotton . Light weight . Best finish</span>
+            <br>
+            <br>
+            <span style="color: grey;">Unique design . For men . casual</span>
+            <br>
+            <br>
+            <h4 style="font-weight: 150;">There are many variations of passages of lorem ipsum av...</h4>
+        </div>
+        <div class="col-md-3">
+            <h2>${{ product.price }} <span style="color: red; font-size: 80%;">
+                <del>$20.99</del>
+            </span></h2>
+            <span style="color: #06ac05;"><b>Free shipping</b></span>
+            <br>
+            <br>
+            <button style="width: 100%; background-color: #0535ac; font-weight: 700;" class="btn btn-primary">BUY NOW</button>
+            <br>
+            <br>
+            <button style="width: 100%; border-color: #0535ac; font-weight: 700; color: #0535ac;" class="btn btn-default">ADD TO CART</button>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

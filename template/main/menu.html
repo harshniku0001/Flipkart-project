@@ -1,0 +1,217 @@
+
+    <style>
+        
+.linkmenu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: white;
+    padding-top: 10px;
+}
+.linkmenu div {
+    cursor: pointer;
+}
+.linkmenu div:hover {
+    color: #2874f0;
+}
+.linkmenu .fashion, .electronics, .home, .appliances, .toys {
+    display: flex;
+    flex-direction: column;
+}
+.dropdown-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.linkmenu ul {
+    list-style: none;
+}
+.dropdown2, .dropdown3, .dropdown4, .dropdown5, .dropdown6 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    text-align: left;
+    z-index: 1;
+}
+.linkmenu li {
+    width: 13vw;
+    font-size: 17px;
+    margin: 16px;
+    padding: 5px;
+}
+.dropdown6 {
+    right: 3px;
+}
+.linkmenu li:hover {
+    background-color: #e3e5e7;
+    color: #2874f0;
+}
+.fashion:hover .dropdown2{
+    display: block;
+}
+.electronics:hover .dropdown3 {
+    display: block;
+}
+.home:hover .dropdown4 {
+    display: block;
+}
+.appliances:hover .dropdown5 {
+    display: block;
+}
+.toys:hover .dropdown6 {
+    display: block;
+}
+@media screen and (max-width: 750px){
+    .linkmenu {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        text-align: center;
+        flex-direction: row;
+        overflow: auto;
+    }
+    .appliances {
+        display: flex;
+        flex-direction: column;
+    }
+    .dropdown6 {
+        right: 0;
+    }
+    .dropdown2, .dropdown3, .dropdown4, .dropdown5 {
+        left: 0;
+    }
+    .linkmenu li {
+        width: 32vw;
+    }
+}
+
+  
+
+    </style>
+<!--menu-->
+<div class="linkmenu">
+    
+    <div class="grocery">
+        <img src="https://rukminim1.flixcart.com/flap/64/64/image/29327f40e9c4d26b.png?q=100" alt="Detergent Pic">
+        <p>Grocery</p>
+    </div>
+    <div class="mobiles">
+        <img src="https://rukminim1.flixcart.com/flap/64/64/image/22fddf3c7da4c4f4.png?q=100" alt="Mobile  Pic">
+        <p>Mobiles</p>
+    </div>
+    <div class="fashion">
+        <div>
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/64/64/image/0d75b34f7d8fbcb3.png?q=100" alt="Clothes Pic">
+        </div>
+        <div class="dropdown-title">
+            <div>
+                <p>Fashion</p>
+            </div>
+            <div>
+                <i class="material-icons icon2">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div>
+            <ul class="dropdown2">
+                <li>Men's Top Wear</li>
+                <li>Men's Botton Wear</li>
+                <li>Women Ethnic</li>
+                <li>Women Western</li>
+            </ul>
+        </div>
+    </div>
+    <div class="electronics">
+        <div>
+            <img src="https://rukminim2.flixcart.com/flap/64/64/image/69c6589653afdb9a.png?q=100">
+        </div>
+        <div class="dropdown-title">
+            <div>
+                <p>Electronics</p>
+            </div>
+            <div>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div>
+            <ul class="dropdown3">
+                <li>Audio</li>
+                <li>Camera & Accessories</li>
+                <li>Laptop & Desktops</li>
+                <li>Gaming</li>
+            </ul>
+        </div>
+    </div>
+    <div class="home">
+        <div>
+            <img src="https://rukminim1.flixcart.com/flap/64/64/image/71050627a56b4693.png?q=100" alt="Sofa Pic">
+        </div>
+        <div class="dropdown-title">
+            <div>
+                <p>Home</p>
+            </div>
+            <div>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div>
+            <ul class="dropdown4">
+                <li>Home Furnishing</li>
+                <li>Living Room</li>
+                <li>Kitchen & Dining</li>
+                <li>Home Decor</li>
+            </ul>
+        </div>
+    </div>
+    <div class="appliances">
+        <div>
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/64/64/image/0139228b2f7eb413.jpg?q=100" alt="TV Pic">
+        </div>
+        <div class="dropdown-title">
+            <div>
+                <p>Appliances</p>
+            </div>
+            <div>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div>
+            <ul class="dropdown5">
+                <li>Televisions</li>
+                <li>Washing Machines</li>
+                <li>Airconditioners</li>
+                <li>Refrigertaors</li>
+            </ul>
+        </div>
+    </div>
+    <div class="offers">
+        <img src="https://rukminim2.flixcart.com/flap/64/64/image/69c6589653afdb9a.png?q=100" alt="Top Offers">
+        <p>Top Offers</p>
+    </div>
+    <div class="toys">
+        <div>
+            <img src="https://rukminim1.flixcart.com/flap/64/64/image/22fddf3c7da4c4f4.png?q=100" alt="Toy Pic">
+        </div>
+        <div class="dropdown-title">
+            <div>
+                <p>Beauty,Toys & More</p>
+            </div>
+            <div>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div>
+            <ul class="dropdown6">
+                <li>Beauty & Personal Care</li>
+                <li>Foods & Drinks</li>
+                <li>Nutrition & Health Care</li>
+                <li>Baby Care</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% include 'main/slider.html'%}
+

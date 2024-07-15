@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      background-color: #f1f3f6;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .login-box {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 380px;
+      max-width: 100%;
+    }
+
+    .login-box .left {
+      padding: 40px 30px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 42px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 5px;
+      color: #878787;
+      font-size: 14px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #fb641b; /* Flipkart orange */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: #e5590e;
+    }
+
+    .login-box .footer {
+      padding: 15px 30px;
+      background-color: #f7f7f7;
+      text-align: center;
+      font-size: 14px;
+      color: #878787;
+    }
+
+    .login-box .footer a {
+      color: #2874f0;
+     
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="left">
+        <h2>Login</h2>
+        <form action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
+          <label for="username">Enter Username</label>
+          <input class="form-control" onkeyup="check()" type="text" id="username" placeholder="username" required name="username">  
+          
+          <label for="password">Enter Password</label>
+          <input class="form-control"  type="password" id="password" placeholder="Password" required name="password">
+
+          <button type="submit" >Login</button>
+
+          <script>
+            function check(){
+              var username = $("#username").val();
+              console.log(username)
+              $.ajax({
+                url : "http://127.0.0.1:8000/chek_login",
+                method: "GET",
+                data:{"name":username},
+                success: function(abc) {
+
+                  alert(abc.id)
+                }
+              })
+
+
+            }
+          </script>
+
+        </form>
+      </div>
+      <div class="footer">
+        New to Flipkart? <a href="{% url 'signup'%}">Create an account</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .slider-container {
+    background-color: #fff;
+    overflow: hidden;
+    padding-top: 10px;
+   
+  }
+
+  .slider {
+    display: flex;
+    animation: slide 10s linear infinite;
+    ;
+    
+  }
+
+  .slider img {
+    width: 100%;
+    height: auto;
+   
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-20%);
+    }
+    25% {
+      transform: translateX(-50%);
+    }
+    45% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-150%);
+    }
+    70% {
+      transform: translateX(-200%);
+    }
+    75% {
+      transform: translateX(-250%);
+    }
+    95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+    </style>
+
+<div class="slider-container">
+    <div class="slider">
+      
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/b5ec95451c4f8705.jpg?q=20" alt="Image 1"> 
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/943fc7a0812f3209.jpg?q=20" alt="Image 2">     
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/f6720ba6b92b67fb.jpg?q=20" alt="Image 3">      
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/c7d5963c1f077d41.jpg?q=20" alt="Image 4">      
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/4227babcdcb113c8.jpg?q=20" alt="Image 5">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/f6720ba6b92b67fb.jpg?q=20" alt="Image 6">
+    </div>
+
+</div>
+{% include 'main/items.html'%}
+
